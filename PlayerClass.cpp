@@ -11,3 +11,7 @@ Player::Player(string name, int player_id) {
 void Player::setTurn(int x, int y) {
 
 }
+
+string Player::getName() {
+	return name;
+}
