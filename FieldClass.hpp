@@ -13,6 +13,8 @@ private:
 	Field();
 
 public:
+	// Delete copy constructor
+	Field(const Field&) = delete;
 	// Singleton method for returning or creating a field
 	static Field& getInstance();
 	// Write playerturn to the field array
