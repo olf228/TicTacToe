@@ -3,16 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include <inttypes.h>
 
 class Player {
 private:
 	std::string name;
-	uint8_t playernumber;
+	int player_id;
 	
-public:
-	void setTurn();
-
+public: 
+	Player(std::string name, int player_id);
+	void setTurn(int x, int y);
 };
 
 
