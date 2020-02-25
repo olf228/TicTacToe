@@ -1,7 +1,6 @@
 #ifndef _FIELDCLASS_HPP
 #define _FIELDCLASS_HPP
 
-#include <array>
 
 class Field {
 private:
@@ -19,7 +18,8 @@ public:
 	static Field& getInstance();
 	// Write playerturn to the field array
 	void setTurn(int x, int y, int id);
-
+	// Handover current field
+	int* getFieldArray();
 };
 
 #endif

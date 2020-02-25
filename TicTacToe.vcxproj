@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FieldClass.cpp" />
+    <ClCompile Include="GameClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerClass.cpp" />
   </ItemGroup>
