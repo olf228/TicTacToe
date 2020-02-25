@@ -139,6 +139,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FieldClass.hpp" />
+    <ClInclude Include="GameClass.hpp" />
+    <ClInclude Include="LogicClass.hpp" />
+    <ClInclude Include="PlayerClass.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
