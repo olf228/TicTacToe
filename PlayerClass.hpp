@@ -12,6 +12,7 @@ private:
 public: 
 	Player(std::string name, int player_id);
 	void setTurn(int x, int y);
+	std::string getName();
 };
 
 

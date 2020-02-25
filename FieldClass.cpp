@@ -19,6 +19,6 @@ void Field::setTurn(int x, int y, int id) {
 	field_array[x][y] = id;
 }
 
-int* Field::getFieldArray() {
+/*int* Field::getFieldArray() {
 	return field_array;
-}
+}*/

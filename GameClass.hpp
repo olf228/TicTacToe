@@ -7,15 +7,17 @@
 
 class Game {
 private:
-	Player player1;
-	Player player2;
-	Field gamefield;
+	Player* player1;
+	Player* player2;
+	Field* gamefield;
 	int current_player;
 
 public:
+	Game();
 	void printGameField();
 	void getInput();
 	void initializeGame();
+	
 
 };
 
