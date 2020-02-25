@@ -1,13 +1,14 @@
 #ifndef _FIELDCLASS_HPP
 #define _FIELDCLASS_HPP
 
+#include <array>
 
 class Field {
 private:
 	// Singleton Instance
 	static Field field_instance;
 	// Gamefield with player ids
-	int field_array[3][3];
+	std::array<std::array<int, 3>, 3> field;
 	// Private Constructor
 	Field();
 

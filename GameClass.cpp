@@ -18,14 +18,14 @@ void Game::initializeGame() {
 	cin >> p1_name; // Read first name
 	cout << endl << "Enter the name of the second player: " << endl;
 	cin >> p2_name; // Read second name
-
+	
 	// Create Player objects
 	player1 = new Player(p1_name, 1); 
 	player2 = new Player(p2_name, 2);
-
+	
 	cout << "Alright, player 1 is " << player1->getName() << " and player 2 is " << player2->getName() << "." << endl;
 	cout << "Let us see, who will beginn... " << endl;
-
+	
 	// Generate pseudo random number
 	Game::current_player = (rand() % 2) + 1;
 	cout << "Congrats ";
@@ -39,5 +39,5 @@ void Game::initializeGame() {
 		cout << "Fatal Error! Random number not in range! Exiting game!" << endl;
 	}
 	cout << ", you will start the game!" << endl;
-
+	
 }
