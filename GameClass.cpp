@@ -5,13 +5,36 @@
 
 using namespace std;
 
-
 Game::Game() {
 	initializeGame();
+
+
+}
+
+Player* Game::getCurrentPlayer() {
+	if (current_player == 1) return player1;
+	else if (current_player == 2) return player2;
+}
+
+void Game::printGameField() {
+
+}
+
+void Game::runGame() {
+	while (Game::gamestate == RUNNING) {
+		int x, y;
+		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
+		cin >> x, y;
+		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId);
+
+		Game::printGameField();
+	}
 
 }
 
 void Game::initializeGame() {
+	Game::gamestate = RUNNING;
+
 	string p1_name, p2_name; // Buffer for player names
 	cout << "TicTacToe V1.0" << endl << "(c) Florian Meier 2020" << endl << endl;
 	cout << "Welcome to TicTacToe! Please enter the name of the first player: " << endl;
