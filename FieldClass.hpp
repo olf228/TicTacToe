@@ -18,7 +18,7 @@ public:
 	// Delete copy constructor
 	Field(const Field&) = delete;
 	// Singleton method for returning or creating a field
-	static Field& getInstance();
+	static Field* getInstance();
 	// Write playerturn to the field array
 	void setTurn(int x, int y, int id);
 	// Handover current field

@@ -17,7 +17,7 @@ Player* Game::getCurrentPlayer() {
 }
 
 void Game::printGameField() {
-
+	cout << gamefield->getStringField();
 }
 
 void Game::setCurrentPlayer(int new_id) {
