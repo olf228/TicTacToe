@@ -30,7 +30,7 @@ private:
 	Field* gamefield;
 
 	/* Save the current player id to this variable */
-	int current_player;
+	int currentPlayerID;
 
 	/* Save the current gamestate (either RUNNING, ERROR, FINISHED) */
 	GAMESTATE gamestate;
@@ -56,6 +56,9 @@ public:
 
 	/* Return a Player pointer to the current player */
 	Player* getCurrentPlayer();
+
+	/* Set new current player */
+	void setCurrentPlayer(int new_id);
 	
 
 };
