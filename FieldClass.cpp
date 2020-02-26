@@ -18,7 +18,7 @@ Field* Field::getInstance() {
 }
 
 void Field::setTurn(int x, int y, int id) {
-	Field::field.at(x).at(y) = id;
+	Field::field.at(x-1).at(y-1) = id;
 }
 
 string Field::getStringField() {
@@ -27,19 +27,22 @@ string Field::getStringField() {
 
 	/* Print gamefield as stream to the fieldStringStream */
 	for (int y = 0; y < 3; y++) {
-		fieldStringStream << " ------------- " << endl; // Horizontal border except for the most bottom border
+		fieldStringStream << "-------------" << endl; // Horizontal border except for the most bottom border
 		for (int x = 0; x < 3; x++) {
 			if (field.at(x).at(y) == 1) {
-				fieldStringStream << " | " << "X"; // Player 1
+				fieldStringStream << "|" << " X "; // Player 1
 			} 
 			else if (field.at(x).at(y) == 2) {
-				fieldStringStream << " | " << "O"; // Player 2
+				fieldStringStream << "|" << " O "; // Player 2
 			}
-			fieldStringStream << " | "; // Vertical border for gamefield grid
+			else {
+				fieldStringStream << "|" << "   ";
+			}
+			//fieldStringStream << "|"; // Vertical border for gamefield grid
 		}
-		fieldStringStream << " |" << endl;
+		fieldStringStream << "|" << endl;
 	}
-	fieldStringStream << " ------------- " << endl << endl; // End gamefield with horizontal border
+	fieldStringStream << "-------------" << endl << endl; // End gamefield with horizontal border
 	result = fieldStringStream.str(); // Convert the stream to a string
 	return result;
 }
