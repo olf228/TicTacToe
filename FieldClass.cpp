@@ -18,11 +18,41 @@ Field* Field::getInstance() {
 }
 
 void Field::setTurn(int x, int y, int id) {
-	Field::field.at(x-1).at(y-1) = id;
+	Field::field.at(x - 1).at(y - 1) = id;
 }
 
 int checkForWinner() {
+	/* Check for rows */
+	int winner_id = 0; // 0 == no winner, 1 == player1, 2 == player2
+	for (int i = 0; i < 3; i++) {
+		if (field.at(i).at(1) == field.at(i).at(2) && field.at(i).at(2) == field.at(i).at(3)) {
+			winner_id = field.at(i).at(1);
+			break;
+		}
+	}
+	if (winner_id != 0) {
+		return winner_id;
+	}
 
+	/* Check for columns */
+	for (int i = 0; i < 3; i++) {
+		if (field.at(1).at(i) == field.at(2).at(i) && field.at(2).at(i) == field.at(3).at(i)) {
+			winner_id = field.at(1).at(i);
+			break;
+		}
+	}
+	if (winner_id != 0) {
+		return winner_id;
+	}
+
+	/* Check for diagonals */
+	if (field.at(1).at(1) == field.at(2).at(2) && field.at(2).at(2) == field.at(3).at(3)) { 
+		winner_id = field.at(1).at(1);
+	} 
+	else if (field.at(3).at(1) == field.at(2).at(2) && field.at(2).at(2) == field.at(1).at(3)) {
+		winner_id = field.at(3).at(1);
+	}
+	return winner_id;
 }
 
 string Field::getStringField() {
