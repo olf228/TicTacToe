@@ -21,12 +21,12 @@ void Field::setTurn(int x, int y, int id) {
 	Field::field.at(x - 1).at(y - 1) = id;
 }
 
-int checkForWinner() {
+int Field::checkForWinner() {
 	/* Check for rows */
 	int winner_id = 0; // 0 == no winner, 1 == player1, 2 == player2
 	for (int i = 0; i < 3; i++) {
-		if (field.at(i).at(1) == field.at(i).at(2) && field.at(i).at(2) == field.at(i).at(3)) {
-			winner_id = field.at(i).at(1);
+		if (field.at(i).at(0) == field.at(i).at(1) && field.at(i).at(1) == field.at(i).at(2)) {
+			winner_id = field.at(i).at(0);
 			break;
 		}
 	}
@@ -36,8 +36,8 @@ int checkForWinner() {
 
 	/* Check for columns */
 	for (int i = 0; i < 3; i++) {
-		if (field.at(1).at(i) == field.at(2).at(i) && field.at(2).at(i) == field.at(3).at(i)) {
-			winner_id = field.at(1).at(i);
+		if (field.at(0).at(i) == field.at(1).at(i) && field.at(1).at(i) == field.at(2).at(i)) {
+			winner_id = field.at(0).at(i);
 			break;
 		}
 	}
@@ -46,11 +46,11 @@ int checkForWinner() {
 	}
 
 	/* Check for diagonals */
-	if (field.at(1).at(1) == field.at(2).at(2) && field.at(2).at(2) == field.at(3).at(3)) { 
+	if (field.at(0).at(0) == field.at(1).at(1) && field.at(1).at(1) == field.at(2).at(2)) { 
 		winner_id = field.at(1).at(1);
 	} 
-	else if (field.at(3).at(1) == field.at(2).at(2) && field.at(2).at(2) == field.at(1).at(3)) {
-		winner_id = field.at(3).at(1);
+	else if (field.at(2).at(0) == field.at(1).at(1) && field.at(1).at(1) == field.at(0).at(2)) {
+		winner_id = field.at(2).at(0);
 	}
 	return winner_id;
 }

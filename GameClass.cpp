@@ -35,10 +35,6 @@ void Game::runGame() {
 		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId()); // Write user turn to the gamefield
 		Game::printGameField(); // Print the gamefield to the console
 
-		/* Check for winner */
-
-		Field::
-
 		/* Pass the turn to the other player */
 		if (Game::getCurrentPlayer() == player1) {
 			setCurrentPlayer(player2->getPlayerId());
@@ -46,10 +42,26 @@ void Game::runGame() {
 		else if (Game::getCurrentPlayer() == player2) {
 			setCurrentPlayer(player1->getPlayerId());
 		}
+
+		/* Check for winner */
+		int winner_id;
+		winner_id = gamefield->checkForWinner();
+		if (winner_id != 0) {
+			if (winner_id == 1) {
+				cout << "Congratulations " << player1->getName() << ", you won this game!" << endl;
+			}
+			else if (winner_id == 2) {
+				cout << "Congratulations " << player2->getName() << ", you won this game!" << endl;
+			}
+			else {
+				cout << "Exception einfügen!" << endl;
+			}
+			gamestate = GAMESTATE::FINISHED;
+		}
+		
 	}
 
 }
-
 
 void Game::initializeGame() {
 	/* Set the game officially to RUNNING */
