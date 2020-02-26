@@ -25,7 +25,7 @@ void Game::runGame() {
 		int x, y;
 		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
 		cin >> x, y;
-		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId);
+		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId());
 
 		Game::printGameField();
 	}
