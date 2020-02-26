@@ -21,10 +21,10 @@ void Game::printGameField() {
 }
 
 void Game::runGame() {
-	while (Game::gamestate == RUNNING) {
+	while (Game::gamestate == GAMESTATE::RUNNING) {
 		int x, y;
 		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
-		cin >> x, y;
+		cin >> x >> y;
 		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId());
 
 		Game::printGameField();
@@ -33,7 +33,7 @@ void Game::runGame() {
 }
 
 void Game::initializeGame() {
-	Game::gamestate = RUNNING;
+	Game::gamestate = GAMESTATE::RUNNING;
 
 	string p1_name, p2_name; // Buffer for player names
 	cout << "TicTacToe V1.0" << endl << "(c) Florian Meier 2020" << endl << endl;
