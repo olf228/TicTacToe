@@ -2,6 +2,8 @@
 #define _FIELDCLASS_HPP
 
 #include <array>
+#include <string>
+#include <sstream>
 
 class Field {
 private:
@@ -20,7 +22,7 @@ public:
 	// Write playerturn to the field array
 	void setTurn(int x, int y, int id);
 	// Handover current field
-	int* getFieldArray();
+	std::string getStringField();
 };
 
 #endif

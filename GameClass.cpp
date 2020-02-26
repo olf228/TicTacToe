@@ -66,8 +66,11 @@ void Game::initializeGame() {
 	player1 = new Player(p1_name, 1); 
 	player2 = new Player(p2_name, 2);
 	cout << "Alright, player 1 is " << player1->getName() << " and player 2 is " << player2->getName() << "." << endl;
+
+	/* Create a gamefield, if there is no gamefield so far */
+	gamefield = Field::getInstance();
 	
-	/* Get the player, who has the first turn by random int */
+	/* Get the player, who has the first turn by random integer */
 	cout << "Let us see, who will beginn... " << endl;
 	Game::currentPlayerID = (rand() % 2) + 1; // Create a random number in range of 1 to 2
 	cout << "Congrats ";
@@ -81,5 +84,4 @@ void Game::initializeGame() {
 		cout << "Fatal Error! Random number not in range! Exiting game!" << endl; // May add an exception class here
 	}
 	cout << ", you will start the game!" << endl;
-	
 }

@@ -1,5 +1,7 @@
 #include "FieldClass.hpp"
 
+using namespace std;
+
 Field Field::field_instance;
 
 Field::Field() {
@@ -19,6 +21,16 @@ void Field::setTurn(int x, int y, int id) {
 	Field::field.at(x).at(y) = id;
 }
 
-/*int* Field::getFieldArray() {
-	return field_array;
-}*/
+string Field::getStringField() {
+	string result;
+	stringstream fieldStringStream;
+	for (int y = 0; y < 3; y++) {
+		fieldStringStream << "______________" << endl;
+		for (int x = 0; x < 3; x++) {
+			fieldStringStream << " | " << field.at(x).at(y);
+		}
+		fieldStringStream << endl;
+	}
+	result = fieldStringStream.str();
+	return result;
+}
