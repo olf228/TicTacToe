@@ -21,6 +21,10 @@ void Field::setTurn(int x, int y, int id) {
 	Field::field.at(x-1).at(y-1) = id;
 }
 
+int checkForWinner() {
+
+}
+
 string Field::getStringField() {
 	string result; // Result string
 	stringstream fieldStringStream; // Stringstream for saving the gamefield dynamically as stream

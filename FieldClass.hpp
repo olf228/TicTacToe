@@ -15,14 +15,25 @@ private:
 	Field();
 
 public:
-	// Delete copy constructor
+	/* Delete copy constructor */
 	Field(const Field&) = delete;
-	// Singleton method for returning or creating a field
+
+	/* Singleton method for returning or creating a field */
 	static Field* getInstance();
-	// Write playerturn to the field array
+
+	/* Write playerturn to the field array */
 	void setTurn(int x, int y, int id);
-	// Handover current field
+
+	/* Handover current field */
 	std::string getStringField();
+
+	/*
+		Check current gamefield for a winner
+		It returns a integer, which stands for the player id
+		If there is no winner yet, it return 0
+	*/
+	int checkForWinner();
+
 };
 
 #endif

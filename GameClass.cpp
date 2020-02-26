@@ -37,7 +37,7 @@ void Game::runGame() {
 
 		/* Check for winner */
 
-		// TODO
+		Field::
 
 		/* Pass the turn to the other player */
 		if (Game::getCurrentPlayer() == player1) {
@@ -49,6 +49,7 @@ void Game::runGame() {
 	}
 
 }
+
 
 void Game::initializeGame() {
 	/* Set the game officially to RUNNING */

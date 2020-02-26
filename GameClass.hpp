@@ -59,8 +59,6 @@ public:
 
 	/* Set new current player */
 	void setCurrentPlayer(int new_id);
-	
-
 };
 
 #endif
