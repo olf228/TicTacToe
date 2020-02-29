@@ -1,5 +1,6 @@
 #include "FieldClass.hpp"
-#include "InvalidParameterException.hpp"
+#include "ParameterOutOfBoundsException.hpp"
+#include "InvalidUserInputException.hpp"
 
 using namespace std;
 
@@ -19,9 +20,14 @@ Field* Field::getInstance() {
 }
 
 void Field::setTurn(int x, int y, int id) {
-	if (x < 1 || x > 3 || y < 1 || y > 3) {
-		throw InvalidParameterException();
+	
+	if (!isdigit(x) || !isdigit(y)) {
+		throw InvalidUserInputException();
 	}
+	else if (x < 1 || x > 3 || y < 1 || y > 3) {
+		throw ParameterOutOfBoundsException();
+	}
+	
 	Field::field.at(x - 1).at(y - 1) = id;
 }
 

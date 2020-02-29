@@ -140,14 +140,16 @@
   <ItemGroup>
     <ClCompile Include="FieldClass.cpp" />
     <ClCompile Include="GameClass.cpp" />
-    <ClCompile Include="InvalidParameterException.cpp" />
+    <ClCompile Include="InvalidUserInputException.cpp" />
+    <ClCompile Include="ParameterOutOfBoundsException.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FieldClass.hpp" />
     <ClInclude Include="GameClass.hpp" />
-    <ClInclude Include="InvalidParameterException.hpp" />
+    <ClInclude Include="InvalidUserInputException.hpp" />
+    <ClInclude Include="ParameterOutOfBoundsException.hpp" />
     <ClInclude Include="LogicClass.hpp" />
     <ClInclude Include="PlayerClass.hpp" />
   </ItemGroup>

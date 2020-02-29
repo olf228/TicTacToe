@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Exceptions">
+      <UniqueIdentifier>{1799b6b8-2850-4cf7-b188-7edc6059ee87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exceptions">
+      <UniqueIdentifier>{212bb87b-a5b2-4bbf-bc73-340cf57e65ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,8 +33,11 @@
     <ClCompile Include="GameClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InvalidParameterException.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ParameterOutOfBoundsException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidUserInputException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,8 +53,11 @@
     <ClInclude Include="FieldClass.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InvalidParameterException.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ParameterOutOfBoundsException.hpp">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidUserInputException.hpp">
+      <Filter>Header Files\Exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
