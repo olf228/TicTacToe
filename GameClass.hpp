@@ -5,6 +5,7 @@
 #include "FieldClass.hpp"
 #include "LogicClass.hpp"
 
+
 #define MAX_ROW = 3;
 #define MAX_COL = 3;
 /* 

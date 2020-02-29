@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <stdexcept>
 
 using namespace std;
 
@@ -32,7 +33,21 @@ void Game::runGame() {
 		int x, y; // Local variables as buffer for user input
 		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
 		cin >> x >> y; // Write userinput to variables
-		Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId()); // Write user turn to the gamefield
+		try {
+			Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId()); // Write user turn to the gamefield
+			
+		}
+		catch (exception &e) {
+			cout << "An error occured: "  << e.what() << endl;
+			/* Pass the turn to the other player */
+			if (Game::getCurrentPlayer() == player1) {
+				setCurrentPlayer(player2->getPlayerId());
+			}
+			else if (Game::getCurrentPlayer() == player2) {
+				setCurrentPlayer(player1->getPlayerId());
+			}
+		}
+		
 		Game::printGameField(); // Print the gamefield to the console
 
 		/* Pass the turn to the other player */

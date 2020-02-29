@@ -1,4 +1,5 @@
 #include "FieldClass.hpp"
+#include "InvalidParameterException.hpp"
 
 using namespace std;
 
@@ -18,6 +19,9 @@ Field* Field::getInstance() {
 }
 
 void Field::setTurn(int x, int y, int id) {
+	if (x < 1 || x > 3 || y < 1 || y > 3) {
+		throw InvalidParameterException();
+	}
 	Field::field.at(x - 1).at(y - 1) = id;
 }
 
