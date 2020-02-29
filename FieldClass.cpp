@@ -21,7 +21,7 @@ Field* Field::getInstance() {
 
 void Field::setTurn(int x, int y, int id) {
 	
-	if (!isdigit(x) || !isdigit(y)) {
+	if (isdigit(x) || isdigit(y)) {
 		throw InvalidUserInputException();
 	}
 	else if (x < 1 || x > 3 || y < 1 || y > 3) {

@@ -32,7 +32,11 @@ void Game::runGame() {
 		/* Set the turn of current player */
 		int x, y; // Local variables as buffer for user input
 		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
-		cin >> x >> y; // Write userinput to variables
+		if (!(cin >> x >> y)) {
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			continue;
+		}
 		try {
 			Game::gamefield->setTurn(x, y, (Game::getCurrentPlayer())->getPlayerId()); // Write user turn to the gamefield
 			
