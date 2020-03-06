@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 #include <stdexcept>
-
+	
 using namespace std;
 
 Game::Game() {

@@ -39,6 +39,9 @@
     <ClCompile Include="InvalidUserInputException.cpp">
       <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
+    <ClCompile Include="TileAlreadyOccupiedException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LogicClass.hpp">
@@ -57,6 +60,9 @@
       <Filter>Header Files\Exceptions</Filter>
     </ClInclude>
     <ClInclude Include="InvalidUserInputException.hpp">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="TileAlreadyOccupiedException.hpp">
       <Filter>Header Files\Exceptions</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include "FieldClass.hpp"
 #include "ParameterOutOfBoundsException.hpp"
 #include "InvalidUserInputException.hpp"
+#include "TileAlreadyOccupiedException.hpp"
 
 using namespace std;
 
@@ -27,8 +28,14 @@ void Field::setTurn(int x, int y, int id) {
 	else if (x < 1 || x > 3 || y < 1 || y > 3) {
 		throw ParameterOutOfBoundsException();
 	}
+	/* Check, if the selected tile is already set by anyone */
+	if (Field::field.at(x - 1).at(y - 1) == 0) {
+		Field::field.at(x - 1).at(y - 1) = id;
+	}
+	else {
+		throw TileAlreadyOccupiedException();
+	}
 	
-	Field::field.at(x - 1).at(y - 1) = id;
 }
 
 int Field::checkForWinner() {
