@@ -21,19 +21,20 @@ Field* Field::getInstance() {
 }
 
 void Field::setTurn(int x, int y, int id) {
-	
+
+	/* Check if the user input is valid */
 	if (isdigit(x) || isdigit(y)) {
-		throw InvalidUserInputException();
+		throw InvalidUserInputException(); // The input is no digit
 	}
 	else if (x < 1 || x > 3 || y < 1 || y > 3) {
-		throw ParameterOutOfBoundsException();
+		throw ParameterOutOfBoundsException(); // The input is not within the gamefield
 	}
 	/* Check, if the selected tile is already set by anyone */
 	if (Field::field.at(x - 1).at(y - 1) == 0) {
 		Field::field.at(x - 1).at(y - 1) = id;
 	}
 	else {
-		throw TileAlreadyOccupiedException();
+		throw TileAlreadyOccupiedException(); // The coordinates entered by the user are already occupied
 	}
 	
 }
