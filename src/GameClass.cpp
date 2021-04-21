@@ -34,7 +34,7 @@ void Game::runGame() {
 		cout << Game::getCurrentPlayer()->getName() << ", it is your turn. Please enter your coordinates (x followed by y): " << endl;
 		if (!(cin >> x >> y)) {
 			cin.clear();
-			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			//cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			continue;
 		}
 		try {
